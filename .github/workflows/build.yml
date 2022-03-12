@@ -132,7 +132,7 @@ jobs:
           try {
             const releaseVersion = '${{ needs.check_version.outputs.FRIDA_VERSION }}'
             const releaseResponse = await github.repos.getReleaseByTag({
-              owner: 'xiongxit',
+              owner: 'xiongxt86',
               repo: 'strongR-frida',
               tag: releaseVersion
             })
