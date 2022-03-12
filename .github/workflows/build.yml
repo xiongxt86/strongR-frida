@@ -112,7 +112,7 @@ jobs:
       run: |
         git config --global user.email "xiongxiaotun@126.com"
         git config --global user.name "xiongxiaotun"
-        git clone https://github.com/xiongxt86/strongR-frida-1.git
+        git clone https://github.com/xiongxt86/strongR-frida.git
         export ANDROID_NDK_ROOT=${{ steps.setup-ndk.outputs.ndk-path }}
         git clone --recurse-submodules https://github.com/frida/frida
         cd frida/frida-core
@@ -133,7 +133,7 @@ jobs:
             const releaseVersion = '${{ needs.check_version.outputs.FRIDA_VERSION }}'
             const releaseResponse = await github.repos.getReleaseByTag({
               owner: 'xiongxit',
-              repo: 'strongR-frida-1',
+              repo: 'strongR-frida',
               tag: releaseVersion
             })
             const {
