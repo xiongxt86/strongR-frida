@@ -57,21 +57,21 @@ jobs:
             }
      
      
-  create_release:
-    needs: check_version
-    runs-on: ubuntu-latest
-    if: needs.check_version.outputs.ALREADY_RELEASE == '0'
+#   create_release:
+#     needs: check_version
+#     runs-on: ubuntu-latest
+#     if: needs.check_version.outputs.ALREADY_RELEASE == '0'
 
-    steps:
-      - uses: actions/create-release@master
-        id: createRelease
-        name: Create Runner Release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: "${{ needs.check_version.outputs.FRIDA_VERSION }}"
-          release_name: "${{ needs.check_version.outputs.FRIDA_VERSION }}"
-          prerelease: false
+#     steps:
+#       - uses: actions/create-release@master
+#         id: createRelease
+#         name: Create Runner Release
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         with:
+#           tag_name: "${{ needs.check_version.outputs.FRIDA_VERSION }}"
+#           release_name: "${{ needs.check_version.outputs.FRIDA_VERSION }}"
+#           prerelease: false
 
   android_build:
     runs-on: ubuntu-latest
